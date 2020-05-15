@@ -1,0 +1,100 @@
+* {
+    margin: 0;
+}
+
+
+/* Iphone X */
+.App {
+    width: 375px;
+    height: 812px;
+    background-color: aqua;
+    background-image: url('./assets/images/summer-image.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* Centering Text*/
+.panel {
+    padding-top: 110px;
+    text-align: center;
+}
+
+/* Fonts */
+.panel h1,h3 {
+    font-weight: 100;
+    color: white;
+    text-shadow: 2px 2px 8px black;
+}
+
+/* Text */
+h1#temperature {
+    margin: -40px;
+    font-size: 140px;
+}
+
+h1#weather {
+    margin: -40px;
+    font-size: 40px;
+}
+
+/* Panels*/
+#temperature-panel,
+#weather-panel  {
+    background-color: whitesmoke;
+    border-radius: 25px;
+    box-shadow: 1px 1px 5px aquamarine;
+    margin: 0 auto;
+    padding-top: 40px;
+    width: 250px;
+    height: 130px;
+    opacity: 0.5;
+}
+
+#weather-panel  {
+    box-shadow: 1px 1px 15px goldenrod;
+    opacity: 0.5;
+}
+
+#text-panel-temperature {
+    position: absolute;
+    left: 125px;
+    top: 330px;
+}
+
+#text-panel-weather {
+    position: absolute;
+    left: 175px;
+    top: 620px;
+}
+
+/* weather icon */
+.icons {
+    position: absolute;
+    padding-top: 100px;
+    bottom: 80px;
+    left: 130px;
+    right: 130px;
+}
+
+svg#Layer_1 {
+    font-size: 100px;
+    color: white;
+}
+
+/* Animation */
+.icons {
+    animation-duration: 6s;
+    animation-name: bounce;  
+    animation-duration: .5s;
+    animation-fill-mode: both;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+  
+  
