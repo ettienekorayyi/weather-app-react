@@ -4,18 +4,41 @@ import Location from './components/Location/Location';
 import Temperature from './components/Temperature/Temperature';
 import Weather from './components/Weather/Weather';
 import LoadingSpinner from './components/LoadingSpinner/LoadingSpinner';
+import openweatherapp, { apiKey } from './api/openweatherapp';
 
 import './App.css'
 
 
 class App extends React.Component {
-  state = { lat: null, lon: null, errorMessage: '' };
+  state = {
+    lat: -33.864691,
+    lon: 151.043626,
+    errorMessage: '',
+    temperature: 0,
+    location: '',
+    utcDate: '',
+    weather: '',
+    icon: ''
+  };
 
-  componentDidMount() {
-    navigator.geolocation.getCurrentPosition(
-      (position) => this.setState({ lat: position.coords.latitude, lon: position.coords.longitude }), // 
-      (err) => this.setState({ errorMessage: err })); 
+  async componentDidMount() {
+    const { lat, lon } = this.state;
+    let date = new Date().toUTCString();
+    const len = date.length
+
+    const response = await openweatherapp
+      .get(`/weather?lat=${lat}&lon=${lon}&appid=${apiKey.accessKey}&units=metric`);
+
+    this.setState({
+      temperature: response.data.main.temp,
+      location: `${response.data.name}, ${response.data.sys.country}`,
+      weather: response.data.weather[0].main,
+      utcDate: date.substring(0, len - 13).toString(),
+      icon: response.data.weather[0].icon
+    })
+    
   }
+
 
   renderContent = () => {
     if (this.state.errorMessage && !this.state.lat) {
@@ -30,9 +53,15 @@ class App extends React.Component {
       
       return (
         <div className="App">
-          <Location />
-          <Temperature />
-          <Weather />
+          <Location
+            location={this.state.location}
+            currentDate={this.state.utcDate}
+          />
+          <Temperature currentTemp={Math.ceil(this.state.temperature)} />
+          <Weather 
+            weather={this.state.weather}
+            image={`http://openweathermap.org/img/wn/${this.state.icon}@2x.png`}
+          />
         </div>
       );
     }
@@ -41,6 +70,7 @@ class App extends React.Component {
   }
 
   render() {
+    console.log(this.state.weatherData)
     return (
       <div>
         {this.renderContent()}

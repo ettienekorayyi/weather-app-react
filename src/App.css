@@ -21,15 +21,18 @@
 
 /* Fonts */
 .panel h1,h3 {
+    font-family: "Times New Roman";
     font-weight: 100;
+    margin-top: 0px;
+    margin-bottom: 0px;
     color: white;
     text-shadow: 2px 2px 8px black;
 }
 
 /* Text */
 h1#temperature {
-    margin: -40px;
-    font-size: 140px;
+    margin: -20px;
+    font-size: 100px;
 }
 
 h1#weather {
@@ -40,7 +43,7 @@ h1#weather {
 /* Panels*/
 #temperature-panel,
 #weather-panel  {
-    background-color: whitesmoke;
+    background-color: darkslategray;
     border-radius: 25px;
     box-shadow: 1px 1px 5px aquamarine;
     margin: 0 auto;
@@ -58,20 +61,20 @@ h1#weather {
 #text-panel-temperature {
     position: absolute;
     left: 125px;
-    top: 330px;
+    top: 300px;
 }
 
 #text-panel-weather {
     position: absolute;
     left: 175px;
-    top: 620px;
+    top: 560px;
 }
 
 /* weather icon */
 .icons {
     position: absolute;
     padding-top: 100px;
-    bottom: 80px;
+    bottom: 150px;
     left: 130px;
     right: 130px;
 }
