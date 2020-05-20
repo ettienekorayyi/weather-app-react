@@ -1,10 +1,14 @@
 import React from 'react';
 
-function Location() {
+const Location = (props) => {
+  //console.log(props.location); 
+  
+ 
   return (
+    
     <div className="panel">
-      <h1>Northhampton, GB</h1>
-      <h3>Saturday, January 20 2020</h3>
+      <h1>{props.location}</h1>
+      <h3>{ props.currentDate }</h3>
     </div>
   );
 }
