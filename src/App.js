@@ -11,6 +11,7 @@ import './App.css'
 
 class App extends React.Component {
   state = {
+    sysId: 0,
     lat: -33.864691,
     lon: 151.043626,
     errorMessage: '',
@@ -34,11 +35,11 @@ class App extends React.Component {
       location: `${response.data.name}, ${response.data.sys.country}`,
       weather: response.data.weather[0].main,
       utcDate: date.substring(0, len - 13).toString(),
-      icon: response.data.weather[0].icon
+      icon: response.data.weather[0].icon,
+      sysId: response.data.sys.id
     })
     
   }
-
 
   renderContent = () => {
     if (this.state.errorMessage && !this.state.lat) {

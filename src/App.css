@@ -4,84 +4,88 @@
 
 
 /* Iphone X */
-.App {
-    width: 375px;
-    height: 812px;
-    background-color: aqua;
-    background-image: url('./assets/images/summer-image.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-}
 
-/* Centering Text*/
-.panel {
-    padding-top: 110px;
-    text-align: center;
-}
-
-/* Fonts */
-.panel h1,h3 {
-    font-family: "Times New Roman";
-    font-weight: 100;
-    margin-top: 0px;
-    margin-bottom: 0px;
-    color: white;
-    text-shadow: 2px 2px 8px black;
-}
-
-/* Text */
-h1#temperature {
-    margin: -20px;
-    font-size: 100px;
-}
-
-h1#weather {
-    margin: -40px;
-    font-size: 40px;
-}
-
-/* Panels*/
-#temperature-panel,
-#weather-panel  {
-    background-color: darkslategray;
-    border-radius: 25px;
-    box-shadow: 1px 1px 5px aquamarine;
-    margin: 0 auto;
-    padding-top: 40px;
-    width: 250px;
-    height: 130px;
-    opacity: 0.5;
-}
-
-#weather-panel  {
-    box-shadow: 1px 1px 15px goldenrod;
-    opacity: 0.5;
-}
-
-#text-panel-temperature {
-    position: absolute;
-    left: 125px;
-    top: 300px;
-}
-
-#text-panel-weather {
-    position: absolute;
-    left: 175px;
-    top: 560px;
-}
-
-/* weather icon */
-.icons {
-    position: absolute;
-    padding-top: 100px;
-    bottom: 150px;
-    left: 130px;
-    right: 130px;
-}
-
-svg#Layer_1 {
-    font-size: 100px;
-    color: white;
+@media only screen and (max-width: 375px) {
+    .App {
+        width: 375px;
+        height: 812px;
+        background-color: aqua;
+        background-image: url('./assets/images/summer-image.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    
+    /* Centering Text*/
+    .panel {
+        padding-top: 110px;
+        text-align: center;
+    }
+    
+    /* Fonts */
+    .panel h1,h3 {
+        font-family: "Times New Roman";
+        font-weight: 100;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        color: white;
+        text-shadow: 2px 2px 8px black;
+    }
+    
+    /* Text */
+    h1#temperature {
+        margin: -20px;
+        font-size: 100px;
+    }
+    
+    h1#weather {
+        margin: -40px;
+        font-size: 40px;
+    }
+    
+    /* Panels*/
+    #temperature-panel,
+    #weather-panel  {
+        background-color: darkslategray;
+        border-radius: 25px;
+        box-shadow: 1px 1px 5px aquamarine;
+        margin: 0 auto;
+        padding-top: 40px;
+        width: 250px;
+        height: 130px;
+        opacity: 0.5;
+    }
+    
+    #weather-panel  {
+        box-shadow: 1px 1px 15px goldenrod;
+        opacity: 0.5;
+    }
+    
+    #text-panel-temperature {
+        position: absolute;
+        left: 125px;
+        top: 300px;
+    }
+    
+    #text-panel-weather {
+        position: absolute;
+        left: 175px;
+        top: 560px;
+    }
+    
+    /* weather icon */
+    .icons {
+        position: absolute;
+        padding-top: 100px;
+        bottom: 150px;
+        left: 130px;
+        right: 130px;
+    }
+    
+    svg#Layer_1 {
+        font-size: 100px;
+        color: white;
+    }
+      
 }
 
 /* Animation */
@@ -99,5 +103,3 @@ svg#Layer_1 {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-5px); }
 }
-  
-  
