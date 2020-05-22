@@ -1,67 +1,42 @@
 import React from 'react';
 
-import Location from './components/Location/Location';
-import Temperature from './components/Temperature/Temperature';
 import Weather from './components/Weather/Weather';
 import LoadingSpinner from './components/LoadingSpinner/LoadingSpinner';
-import openweatherapp, { apiKey } from './api/openweatherapp';
+
+
 
 import './App.css'
 
 
 class App extends React.Component {
   state = {
-    sysId: 0,
-    lat: -33.864691,
-    lon: 151.043626,
-    errorMessage: '',
-    temperature: 0,
-    location: '',
-    utcDate: '',
-    weather: '',
-    icon: ''
+    lat: '',
+    lon: '',
+    errorMessage: ''
   };
 
   async componentDidMount() {
-    const { lat, lon } = this.state;
-    let date = new Date().toUTCString();
-    const len = date.length
-
-    const response = await openweatherapp
-      .get(`/weather?lat=${lat}&lon=${lon}&appid=${apiKey.accessKey}&units=metric`);
-
-    this.setState({
-      temperature: response.data.main.temp,
-      location: `${response.data.name}, ${response.data.sys.country}`,
-      weather: response.data.weather[0].main,
-      utcDate: date.substring(0, len - 13).toString(),
-      icon: response.data.weather[0].icon,
-      sysId: response.data.sys.id
-    })
-    
+    navigator.geolocation.getCurrentPosition(
+      ({ coords }) => this.setState({ lat: coords.latitude, lon: coords.longitude }),
+      (err) => this.setState({ errorMessage: err.message })
+    );
   }
 
   renderContent = () => {
     if (this.state.errorMessage && !this.state.lat) {
       return (
         <div className="ui active dimmer">
-          <h1 style={{ color: 'white' }}>Error: {this.state.errorMessage.message}</h1>
+          <h1 style={{ color: 'white' }}>Error: {this.state.errorMessage}</h1>
         </div>
       )
     }
 
-    if (!this.state.errorMessage && this.state.lat) {
-      
+    if (!this.state.errorMessage && (this.state.lat && this.state.lon)) {
       return (
         <div className="App">
-          <Location
-            location={this.state.location}
-            currentDate={this.state.utcDate}
-          />
-          <Temperature currentTemp={Math.ceil(this.state.temperature)} />
           <Weather 
-            weather={this.state.weather}
-            image={`http://openweathermap.org/img/wn/${this.state.icon}@2x.png`}
+            latitude={this.state.lat}
+            longhitude={this.state.lon}
           />
         </div>
       );
@@ -71,7 +46,6 @@ class App extends React.Component {
   }
 
   render() {
-    console.log(this.state.weatherData)
     return (
       <div>
         {this.renderContent()}

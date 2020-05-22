@@ -17,7 +17,7 @@
     
     /* Centering Text*/
     .panel {
-        padding-top: 110px;
+        padding-top: 85px;
         text-align: center;
     }
     
@@ -33,12 +33,16 @@
     
     /* Text */
     h1#temperature {
-        margin: -20px;
+        margin-top: -80px;
+        margin-left: -100px;
+        margin-right: -230px;
         font-size: 100px;
     }
     
     h1#weather {
-        margin: -40px;
+        margin-left: -100px;
+        margin-right: -100px;
+        margin-top: -105px;
         font-size: 40px;
     }
     
@@ -76,7 +80,7 @@
     .icons {
         position: absolute;
         padding-top: 100px;
-        bottom: 150px;
+        bottom: 215px;
         left: 130px;
         right: 130px;
     }
