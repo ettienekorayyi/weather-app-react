@@ -2,11 +2,7 @@ import React from 'react';
 
 import Weather from './components/Weather/Weather';
 import LoadingSpinner from './components/LoadingSpinner/LoadingSpinner';
-
-
-
 import './App.css'
-
 
 class App extends React.Component {
   state = {
@@ -34,9 +30,9 @@ class App extends React.Component {
     if (!this.state.errorMessage && (this.state.lat && this.state.lon)) {
       return (
         <div className="App">
-          <Weather 
-            latitude={this.state.lat}
-            longhitude={this.state.lon}
+          <Weather
+            lat={this.state.lat}
+            lon={this.state.lon}
           />
         </div>
       );
