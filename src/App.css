@@ -5,7 +5,7 @@
 
 /* Iphone X */
 
-@media only screen and (max-width: 375px) {
+@media only screen and (min-device-width: 360px) and (max-width: 375px) {
     .App {
         width: 375px;
         height: 812px;
@@ -78,11 +78,10 @@
     
     /* weather icon */
     .icons {
-        position: absolute;
+        position: relative;
         padding-top: 100px;
-        bottom: 215px;
-        left: 130px;
-        right: 130px;
+        bottom: 13rem;
+        
     }
     
     svg#Layer_1 {
