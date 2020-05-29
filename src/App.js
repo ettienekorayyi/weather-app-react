@@ -58,13 +58,11 @@ class App extends React.Component {
 
     if (!errorMessage && (lat && lon)) {
       return (
-        <div className="App" style={{ backgroundImage: `url(${this.imageRenderer()})` }}>
-          <Weather
+        <Weather
             lat={lat}
             lon={lon}
             date={date.substring(0, date.length - 13).toString()}
           />
-        </div>
       );
     }
 
@@ -73,7 +71,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="App" style={{ backgroundImage: `url(${this.imageRenderer()})` }}>
         { this.renderContent() }
       </div>
     );
