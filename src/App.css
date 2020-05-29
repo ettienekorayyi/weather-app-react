@@ -11,7 +11,7 @@ body {
 /* Iphone X */
 @media only screen and (min-device-width: 360px) {
   .App {
-    width: 380px;
+    width: 400px;
     height: 800px;
     background-color: aqua;
 
