@@ -5,7 +5,7 @@ export const apiKey = {
 };
 
 export default axios.create({
-    baseURL: 'http://api.openweathermap.org/data/2.5/',
+    baseURL: 'https://api.openweathermap.org/data/2.5/',
     timeout: 2000,
     headers: {
         'Content-Type': 'application/json'
