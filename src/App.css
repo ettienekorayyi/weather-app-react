@@ -8,7 +8,7 @@
 @media only screen and (min-device-width: 375px) {
     .App {
         width: 375px;
-        height: 812px;
+        height: auto;
         background-color: aqua;
         
         background-size: cover;
