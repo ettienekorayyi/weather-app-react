@@ -15,10 +15,8 @@ class Weather extends React.Component {
   }
 
   renderResult = () => {
-    const { data } = this.props;
-    let date = new Date().toUTCString();
-    const len = date.length
-
+    const { data, date } = this.props;
+    
     if(data !== undefined && data.sys !== undefined) {
       let location = `${data.name}, ${data.sys.country}`;
       
@@ -26,7 +24,7 @@ class Weather extends React.Component {
         <div className="weather">
           <Location
             location={location}
-            currentDate={date.substring(0, len - 13).toString()}
+            currentDate={date}
           />
           <Temperature currentTemp={Math.ceil(data.main.temp)} />
           <WeatherDetails 
