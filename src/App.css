@@ -1,108 +1,115 @@
 * {
-    margin: 0;
+  margin: 0;
+  padding: 0;
 }
 
+body {
+  width: 100%;
+  background-color: gray;
+}
 
 /* Iphone X */
-
 @media only screen and (min-device-width: 360px) {
-    .App {
-        width: 380px;
-        height: 800px;
-        background-color: aqua;
-        
-        background-size: cover;
-        background-repeat: no-repeat;
-    }
-    
-    /* Centering Text*/
-    .panel {
-        padding-top: 85px;
-        text-align: center;
-    }
-    
-    /* Fonts */
-    .panel h1,h3 {
-        font-family: "Times New Roman";
-        font-weight: 100;
-        margin-top: 0px;
-        margin-bottom: 0px;
-        color: white;
-        text-shadow: 2px 2px 8px black;
-    }
-    
-    /* Text */
-    h1#temperature {
-        margin-top: -80px;
-        margin-left: -100px;
-        margin-right: -230px;
-        font-size: 100px;
-    }
-    
-    h1#weather {
-        margin-left: -100px;
-        margin-right: -100px;
-        margin-top: -105px;
-        font-size: 40px;
-    }
-    
-    /* Panels*/
-    #temperature-panel,
-    #weather-panel  {
-        background-color: darkslategray;
-        border-radius: 25px;
-        box-shadow: 1px 1px 5px aquamarine;
-        margin: 0 auto;
-        padding-top: 40px;
-        width: 250px;
-        height: 130px;
-        opacity: 0.5;
-    }
-    
-    #weather-panel  {
-        box-shadow: 1px 1px 15px goldenrod;
-        opacity: 0.5;
-    }
-    
-    #text-panel-temperature {
-        position: absolute;
-        left: 125px;
-        top: 300px;
-    }
-    
-    #text-panel-weather {
-        position: absolute;
-        left: 175px;
-        top: 560px;
-    }
-    
-    /* weather icon */
-    .icons {
-        position: relative;
-        padding-top: 100px;
-        bottom: 13rem;
-        
-    }
-    
-    svg#Layer_1 {
-        font-size: 100px;
-        color: white;
-    }
-      
+  .App {
+    width: 380px;
+    height: 800px;
+    background-color: aqua;
+
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  /* Centering Text*/
+  .panel {
+    padding-top: 85px;
+    text-align: center;
+  }
+
+  /* Fonts */
+  .panel h1,
+  h3 {
+    font-family: "Times New Roman";
+    font-weight: 100;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    color: white;
+    text-shadow: 2px 2px 8px black;
+  }
+
+  /* Text */
+  h1#temperature {
+    margin-top: -80px;
+    margin-left: -100px;
+    margin-right: -230px;
+    font-size: 100px;
+  }
+
+  h1#weather {
+    margin-left: -100px;
+    margin-right: -100px;
+    margin-top: -105px;
+    font-size: 40px;
+  }
+
+  /* Panels*/
+  #temperature-panel,
+  #weather-panel {
+    background-color: darkslategray;
+    border-radius: 25px;
+    box-shadow: 1px 1px 5px aquamarine;
+    margin: 0 auto;
+    padding-top: 40px;
+    width: 250px;
+    height: 130px;
+    opacity: 0.5;
+  }
+
+  #weather-panel {
+    box-shadow: 1px 1px 15px goldenrod;
+    opacity: 0.5;
+  }
+
+  #text-panel-temperature {
+    position: absolute;
+    left: 125px;
+    top: 300px;
+  }
+
+  #text-panel-weather {
+    position: absolute;
+    left: 175px;
+    top: 560px;
+  }
+
+  /* weather icon */
+  .icons {
+    position: relative;
+    padding-top: 100px;
+    bottom: 13rem;
+  }
+
+  svg#Layer_1 {
+    font-size: 100px;
+    color: white;
+  }
 }
 
 /* Animation */
 .icons {
-    animation-duration: 6s;
-    animation-name: bounce;  
-    animation-duration: .5s;
-    animation-fill-mode: both;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-  
+  animation-duration: 6s;
+  animation-name: bounce;
+  animation-duration: 0.5s;
+  animation-fill-mode: both;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
 }
 
 @keyframes bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-5px); }
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
 }
