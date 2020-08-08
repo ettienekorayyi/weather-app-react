@@ -3,10 +3,11 @@ import React from 'react';
 import Weather from './components/Weather/Weather';
 import LoadingSpinner from './components/LoadingSpinner/LoadingSpinner';
 
-import SummerBackground from './assets/images/summer-image.jpg';
-import AutumnBackground from './assets/images/autumn-image-mobile.jpg';
-import WinterBackground from './assets/images/winter-image-mobile.jpg';
-import SpringBackground from './assets/images/spring-image-mobile.jpg';
+import SummerBackgroundMobile from './assets/images/summer-image.jpg';
+import AutumnBackgroundMobile from './assets/images/autumn-image.jpg';
+import WinterBackgroundMobile from './assets/images/winter-image.jpg';
+import SpringBackgroundMobile from './assets/images/spring-image.jpg';
+
 import './App.css';
 
 class App extends React.Component {
@@ -34,14 +35,14 @@ class App extends React.Component {
     const { month } = this.state;
     
     if(month >= 2 && month <= 4) {
-      return AutumnBackground;
+      return AutumnBackgroundMobile;
     } else if(month >= 5 && month <= 7) {
-      return WinterBackground;
+      return WinterBackgroundMobile;
     } else if(month >= 8 && month <= 10) {
-      return SpringBackground;
+      return SpringBackgroundMobile;
     } else if((month >= 0 && month <= 1) 
     || month === 11) {
-      return SummerBackground;
+      return SummerBackgroundMobile;
     }
   };
 
