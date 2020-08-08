@@ -8,24 +8,84 @@ body {
   background-color: gray;
 }
 
+/* Animation */
+.icons {
+  animation-duration: 6s;
+  animation-name: bounce;
+  animation-duration: 0.5s;
+  animation-fill-mode: both;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@media only screen and  (min-width: 1281px) {
+  .App {
+    width: 100vw !important;
+    height: 100vh !important;
+
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+  }
+  
+  .panel {
+    padding-top: 85px !important;
+    text-align: center !important;
+  }
+
+  .panel h1,
+  h3 {
+    font-family: "Times New Roman" !important;
+    font-weight: 100 !important;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    color: white;
+    text-shadow: 2px 2px 8px black ;
+  }
+
+  h1#temperature {
+    margin-top: -80px;
+    margin-left: 630px !important;
+    margin-right:  650px;
+    font-size: 100px;
+  }
+
+  h1#weather {
+    margin-left: 620px !important;
+    margin-right: -100px !important;
+    margin-top: -105px;
+    font-size: 40px;
+  }
+
+}
+
 /* Iphone X */
 @media only screen and (min-device-width: 360px) {
   .App {
     width: 420px;
-    height: 800px;
+    height: 120vh;
     background-color: aqua;
 
     background-size: cover;
     background-repeat: no-repeat;
   }
 
-  /* Centering Text*/
+  
   .panel {
     padding-top: 85px;
     text-align: center;
   }
 
-  /* Fonts */
+  
   .panel h1,
   h3 {
     font-family: "Times New Roman";
@@ -36,7 +96,7 @@ body {
     text-shadow: 2px 2px 8px black;
   }
 
-  /* Text */
+  
   h1#temperature {
     margin-top: -80px;
     margin-left: -100px;
@@ -51,7 +111,7 @@ body {
     font-size: 40px;
   }
 
-  /* Panels*/
+  
   #temperature-panel,
   #weather-panel {
     background-color: darkslategray;
@@ -81,7 +141,7 @@ body {
     top: 560px;
   }
 
-  /* weather icon */
+  
   .icons {
     position: relative;
     padding-top: 100px;
@@ -94,22 +154,4 @@ body {
   }
 }
 
-/* Animation */
-.icons {
-  animation-duration: 6s;
-  animation-name: bounce;
-  animation-duration: 0.5s;
-  animation-fill-mode: both;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-}
 
-@keyframes bounce {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-5px);
-  }
-}
